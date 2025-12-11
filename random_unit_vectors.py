@@ -1,7 +1,12 @@
+import numpy as np
+
 def random_unit_vectors(num_vectors, dim):
-    """
-    Replace the code below with your own implementation.
-    """
-    ### Replace with your own code (begin) ###
-    pass
-    ### Replace with your own code (end)   ###
+    
+    M = np.random.randn(num_vectors, dim)
+    
+    for i in range(num_vectors):
+        M[i] /= np.linalg.norm(M[i], ord=2)
+    
+    return M
+
+print(random_unit_vectors(4, 2))
